@@ -33,12 +33,7 @@ function HomePage() {
     localStorage.setItem("taskList", JSON.stringify(tempList))
   }
 
-  // const tasks = JSON.parse(localStorage.getItem("taskList"))
-
-  useEffect(()=>{
-    
-  })
-
+  
 
 
   return (
