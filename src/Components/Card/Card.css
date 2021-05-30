@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.card-cont{
+    background-color: #fffefe;
+    width: 67%;
+    height: 15vh;
+    padding:0 5% 0 2.5%;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+    margin: 1% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: ease-in-out 0.3s;
+}
+
+.card-deets{
+    width: 100%;
+    padding-left: 2.5%;
+    
+}
+
+.color-div{
+    border-radius: 2px;
+    height: 75%;
+    width: 1vh;
+}
+
+
+.done-check{
+    height: 25%;
+    width: 6%;
+    appearance: none;
+    /* box-shadow: 0px 0px 4px attr(color); */
+    border-radius: 50%;
+    /* border: 1px solid black; */
+}
+
+input[type="checkbox"].done-check:checked{
+    background-color: #f05;
+}
+
+@media (max-width:800px){
+    .card-cont{
+        width: 80%;
+        height: 12.5vh;
+        margin: 2.5% 0;
+    }
+    .done-check{
+        height: 25%;
+        width: 10%;
+    }
+
+    .card-deets{
+        padding-left:5% ;
+    }
+
+    .card-heading{
+        font-size: 1.25rem;
+    }
+
+    .card-category{
+        font-size: 0.90rem;
+    }
+}
+
+
