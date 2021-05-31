@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CreateToDo from "./Components/createToDo/createToDo";
 import Card from './Components/Card/Card';
 import './homePage.css';
@@ -37,26 +37,26 @@ function HomePage() {
 
 
   return (
-    <div>
+    <>
       <div className="nav">
       <h1 className="heading"><span className="task-no">to</span>Doosss</h1>
       <p className="mob-tasks-left">{numTasks}</p>
       </div>
       
       <CreateToDo modal={modal} toggle={toggleModal} saveList={saveList} />
-      <div class="container">
-          <div class="section one">
+      <div className="container">
+          <div className="section one">
               <DailyMessage customClass="task-prog"/>
 
               <h1 className="task-prog">
-                {numTasks===0?"you're all caught up":<>you have <span className="task-no">{numTasks}</span> {numTasks==1?"task":"tasks"} to complete.</>}</h1>
+                {numTasks===0?"you're all caught up":<>you have <span className="task-no">{numTasks}</span> {numTasks===1?"task":"tasks"} to complete.</>}</h1>
               <button onClick={toggleModal} className="add-button hvr-bounce-in">+</button>
           </div>
           <div className={`section two ${numTasks===0?" img-cont":""}`}>
-            {numTasks===0?<div className="img-container"><h1 className="mobile-prog">You're all caught up!</h1><img className="done-img" src={NoTasks}/></div>:
+            {numTasks===0?<div className="img-container"><h1 className="mobile-prog">You're all caught up!</h1><img alt="All Done" className="done-img" src={NoTasks}/></div>:
             <>
-              {taskList.map((todos, key) => {
-              return <Card title={todos.Name} category={todos.Category} id={todos.id} completeTodo={completeTodo} color={todos.Color}/>
+              {taskList.map((todos) => {
+              return <Card title={todos.Name} category={todos.Category} id={todos.id} completeTodo={completeTodo} color={todos.Color} key={todos.id}/>
               })}
           </>}
           <button onClick={toggleModal} className="add-button hvr-bounce-in" id="mobile-bt">+</button>
@@ -66,7 +66,7 @@ function HomePage() {
       {/* {taskList.map((data)=>
           <h1>{data.Color}</h1>
       )} */}
-    </div>
+    </>
   );
 }
 
